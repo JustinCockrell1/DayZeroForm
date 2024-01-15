@@ -9,9 +9,12 @@ npm run build
 and then
 npm run start
 ```
+I used node v21.4.0. There might be issues with outdated versions.
 
 ## Ambiguities
 I wasn't sure about the date picker. I probably would have used react-datepicker, but I wasn't sure if it was supposed to be a picker or a text input
+
+I decided to just keep track of the users added in the frontend instead of adding a database because it simplified it.
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
