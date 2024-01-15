@@ -1,8 +1,42 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
+
+import localFont from 'next/font/local'
+
+const switzer = localFont({ src: [
+  {
+  path:'./fonts/Switzer-Regular.otf' ,
+  weight:'400',
+  style:'normal',
+  },
+  {
+    path:'./fonts/Switzer-Light.otf' ,
+    weight:'300',
+    style:'normal',
+  },
+  {
+    path:'./fonts/Switzer-Extralight.otf' ,
+    weight:'200',
+    style:'normal',
+  },
+  {
+    path:'./fonts/Switzer-Medium.otf' ,
+    weight:'500',
+    style:'normal',
+  },
+  {
+    path:'./fonts/Switzer-Black.otf' ,
+    weight:'900',
+    style:'normal',
+  }
+],
+variable:'--font-switzer',
+display:"swap",
+
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={switzer.variable}>{children}</body>
     </html>
   )
 }

@@ -2,26 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.font-switzer {
+    font-family: var(--font-switzer), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.animated-button {
+position:relative;
+overflow: hidden;
+z-index: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.animated-button::before {
+    position: absolute;
+
+    left: 50%;
+    top: 100%;
+
+    content: "";
+    width: 300%;
+    height: 600%;
+    border-radius: 200%;
+    @apply bg-buttonhover;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: all .3s linear;
+}
+
+.animated-button:hover::before {
+    /* transform: translateY(0%) translateX(-50%); */
+    top: -50%;
 }

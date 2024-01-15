@@ -1,3 +1,18 @@
+## Running Locally
+```After cloning
+run npm i
+Then to run in dev mode:
+npm run dev
+or in production mode
+npm run build
+and then
+npm run start
+```
+
+## Ambiguities
+I wasn't sure about the date picker. I probably would have used react-datepicker, but I wasn't sure if it was supposed to be a picker or a text input
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
