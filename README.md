@@ -1,5 +1,6 @@
 ## Running Locally
-```After cloning
+```
+After cloning
 run npm i
 Then to run in dev mode:
 npm run dev
