@@ -77,9 +77,12 @@ export default function Form({onComplete}:{onComplete:any}) {
         errors.link = "A portfolio link is required to proceed";
       }
       if(!nickname) {
-        "A nickname is required to proceed"
+        errors.nickname = "A nickname is required to proceed"
       }
-      if(users.find((u)=>{
+      else if(nickname.trim().includes(" ")) {
+        errors.nickname = "No spaces allowed in the nickname"
+      }
+      else if(users.find((u)=>{
         return u.nickname==user.nickname;
       })) {
         errors.nickname = "This nickname is already taken"
@@ -96,7 +99,7 @@ export default function Form({onComplete}:{onComplete:any}) {
     <h3 className='font-medium text-formheading'>About you</h3>
     <FormInput type="text" label='FULL NAME' id="name" required={true} Icon={IconProfile} value={fullName} onChange={setFullName} errorMessage={errors.fullName}/>
     <FormInput type="text" label='DATE OF BIRTH' id="dob" required={false} Icon={IconCalendar} value={dob} onChange={setDob} errorMessage={errors.dob}/>
-    <FormInput type="text" label='NICKNAME' id="nickname" required={true} Icon={IconSend} placeholder='No spaces' value={nickname} onChange={setNickname} errorMessage={errors.nickname}/>
+    <FormInput type="text" label='NICKNAME' id="nickname" maxLength={25} required={true} Icon={IconSend} placeholder='No spaces' value={nickname} onChange={setNickname} errorMessage={errors.nickname}/>
     <h3 className='mt-3 font-medium text-formheading'>Contact Information</h3>
     <FormInput type="email" label='EMAIL' id="email" required={true} placeholder='email@domain.com' Icon={IconEnvelope} value={email} onChange={setEmail} errorMessage={errors.email}/>
     <FormInput type="text" label='PORTFOLIO LINK' id="portfolio-link" required={true} Icon={IconPaperclip} placeholder='https://' value={link} onChange={setLink} errorMessage={errors.link}/>
@@ -104,7 +107,7 @@ export default function Form({onComplete}:{onComplete:any}) {
       <div className='w-full flex justify-end'>
 
     <button 
-    className='rounded-lg border-[1px] border-[#201E1C] p-2 px-3 mt-3 text-[16px] flex items-center group animated-button hover:text-white hover:border-buttonhover duration-300' disabled={isLoading}>
+    className='rounded-lg border-[1px] border-almostblack p-2 px-3 mt-3 text-[16px] flex items-center group animated-button hover:text-white hover:border-buttonhover duration-300' disabled={isLoading}>
       Submit my form <IconArrow className="group-hover:rotate-45 duration-300 group-hover:fill-white translate-y-[2px] ml-1 "/> 
     </button>
     </div>

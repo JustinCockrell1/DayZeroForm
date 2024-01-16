@@ -15,7 +15,8 @@ const config: Config = {
         buttonhover:"#FA7921",
         shadedgray:"rgba(204, 204, 204, 0.20)",
         formheading:"rgba(32, 30, 28, 0.80)",
-        error:"#FF4141"
+        error:"#FF4141",
+        almostblack:"#201E1C",
       },
       fontFamily:{
         switzer:['var(--font-switzer)']
