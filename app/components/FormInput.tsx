@@ -7,7 +7,10 @@ export default function FormInput(
 
   const error = errorMessage.length>0;
 
-  const progressBarWidth = `${Math.min((value.length / 25) * 100,100)}%`;
+  let progressBarWidth; 
+  if(maxLength) {
+    progressBarWidth = `${Math.min((value.length / maxLength) * 100,100)}%`;
+  }
 
   return (
     <>
@@ -34,7 +37,7 @@ export default function FormInput(
           style={{ width: progressBarWidth }}
         ></div>
         <div className={`${error ? "bg-error":"bg-almostblack"} flex py-1 px-2 justify-center items-center absolute right-0 top-0 bottom-0 m-auto rounded-full text-xs text-white h-fit opacity-0 ${value.length>0 && "opacity-100"} duration-500`}>
-          {value.length}/25
+          {value.length}/{maxLength}
         </div>
         </>
         }

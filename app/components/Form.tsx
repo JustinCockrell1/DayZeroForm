@@ -99,7 +99,7 @@ export default function Form({onComplete}:{onComplete:any}) {
     <h3 className='font-medium text-formheading'>About you</h3>
     <FormInput type="text" label='FULL NAME' id="name" required={true} Icon={IconProfile} value={fullName} onChange={setFullName} errorMessage={errors.fullName}/>
     <FormInput type="text" label='DATE OF BIRTH' id="dob" required={false} Icon={IconCalendar} value={dob} onChange={setDob} errorMessage={errors.dob}/>
-    <FormInput type="text" label='NICKNAME' id="nickname" maxLength={25} required={true} Icon={IconSend} placeholder='No spaces' value={nickname} onChange={setNickname} errorMessage={errors.nickname}/>
+    <FormInput type="text" label='NICKNAME' id="nickname" maxLength={50} required={true} Icon={IconSend} placeholder='No spaces' value={nickname} onChange={setNickname} errorMessage={errors.nickname}/>
     <h3 className='mt-3 font-medium text-formheading'>Contact Information</h3>
     <FormInput type="email" label='EMAIL' id="email" required={true} placeholder='email@domain.com' Icon={IconEnvelope} value={email} onChange={setEmail} errorMessage={errors.email}/>
     <FormInput type="text" label='PORTFOLIO LINK' id="portfolio-link" required={true} Icon={IconPaperclip} placeholder='https://' value={link} onChange={setLink} errorMessage={errors.link}/>
